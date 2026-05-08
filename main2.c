@@ -1,54 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int main(void) {
-	int num1, num2;
-    	char OP;
-    	double result;
+int main(void) 
+{
+	char first_name[50];
+	char last_name[50];
+	char full_name[100];
 
-    	printf("Enter two numbers: ");
-    	if (scanf("%d %d", &num1, &num2) != 2) {
-        	fprintf(stderr, "Invalid input.\n");
-        	return EXIT_FAILURE;
-    	}	
+	printf("Enter the first name\n: ");
+	fgets(first_name, sizeof(first_name), stdin);
+	first_name[strcspn(first_name, "\n")] = '\0';
 
-    	printf("Choose operator (+, -, *, /, %%): ");
-    	if (scanf(" %c", &OP) != 1) {
-        	fprintf(stderr, "Invalid operator input.\n");
-        	return EXIT_FAILURE;
-    	}
-	switch(OP){
-		case '+':
-			result = num1 + num2;
-			printf("The sum = %.2f", result);
-			break;
-		case '-':
-                        result = num1 - num2;
-                        printf("The difference = %.2f", result);
-                        break;
-		case '*':
-                        result = num1 * num2;
-                        printf("The product = %.2f", result);
-                        break;
-		case '/':
-			if (num1 == 0){
-				fprintf(stderr, "cannot divide by zero");
-				return EXIT_FAILURE;
-			}
-                        result = num1 / num2;
-                        printf("The difference = %.2f", result);
-                        break;
-		case '%':
-			if (num2 == 0) {
-                		fprintf(stderr, "Cannot modulo by zero.\n");
-                		return EXIT_FAILURE;
-            		}
-                        result = num1 %  num2;
-                        printf("The remainder = %.2f", result);
-                        break;
-		default:
-			printf("Invalid operation!!\n");
+	printf("Enter the last name\n: ");
+        fgets(last_name, sizeof(last_name), stdin);
+        last_name[strcspn(last_name, "\n")] = '\0';
+
+	printf("Length of first name: %zu\n", strlen(first_name));
+	printf("Length of last name: %zu\n", strlen(last_name));
+
+	if (strcmp(first_name, "Kamau") == 0 && strcmp(last_name, "Augustino") == 0) 
+	{
+    		printf("First and last name match.\n");
 	}
+
+	snprintf(full_name, sizeof(full_name), "%s %s", first_name, last_name);
+    	printf("Full name: %s\n", full_name);
+
     	return EXIT_SUCCESS;
 }
 
