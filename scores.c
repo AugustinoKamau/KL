@@ -11,6 +11,7 @@ int read_scores(int arr[], int n)
 	}
 
 	printf("Enter an Integer (0 -100).\n): ");
+	int i;
 	for (i=0; i < n; i++)
 	{
 		if (scanf("%d", &arr[i]) !=1)

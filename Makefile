@@ -2,14 +2,14 @@
 
 CC = gcc
 CFLAGS = -std=c17 -Wall -Wextra -g
-TARGETS = main scores
+TARGETS = main
 
 all: $(TARGETS)
 
-main: main.o
-	$(CC) $(CFLAGS) main.o -o main
+main: main.o scores.o
+	$(CC) $(CFLAGS) main.o scores.o -o main
 
-main.o: main.c
+main.o: main.c scores.h
 	$(CC) $(CFLAGS) -c main.c -o main.o
 
 
