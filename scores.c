@@ -41,12 +41,32 @@ double calc_average(const int arr[], int n)
 
 int find_max(int arr[], int n)
 {
-}
-/*
-int find_min(int arr[], int n)
-{
+	int max = arr[0];
+	int i;
+	for (i = 1; i < n; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+		}
+	}
+	return max;
 }
 
+int find_min(int arr[], int n)
+{
+	int min= arr[0];
+        int i;
+        for (i = 1; i < n; i++)
+        {
+                if (arr[i] < min)
+                {
+                        min = arr[i];
+                }
+        }
+        return min;
+}
+/*
 int count_pass(const int arr[], int n)
 {
 }
