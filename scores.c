@@ -23,15 +23,26 @@ int read_scores(int arr[], int n)
 	return EXIT_SUCCESS;
 
 }
-/*
+
 double calc_average(const int arr[], int n)
 {
+	double sum = 0.0;
+	int i;
+	if (n <= 0)
+	{
+		return 0.0;
+	}
+	for (i = 0; i < n; ++i)
+	{
+		sum += arr[i];
+	}
+	return sum / n;
 }
 
 int find_max(int arr[], int n)
 {
 }
-
+/*
 int find_min(int arr[], int n)
 {
 }
