@@ -66,8 +66,18 @@ int find_min(int arr[], int n)
         }
         return min;
 }
-/*
+
 int count_pass(const int arr[], int n)
 {
+	int count = 0;
+	int i;
+ 	for( i = 0; i < n; i++)
+	{
+		if (arr[i] >= 100) 
+		{
+			count++;
+		}
+	}
+	return count;
 }
-*/
+
